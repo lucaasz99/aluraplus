@@ -1,0 +1,180 @@
+:root { /*variáveis do CSS*/
+    --branco-principal: #FFFFFF;
+    --cinza-secundario: #C0C0C0;
+    --botao-azul: #167BF7;
+    --botao-azul-efeito: #378df7;
+    --cor-de-fundo: #00030C;
+    --fonte-principal: 'Inter';
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+    color: var(--branco-principal); /*Cor generalizada do texto, todos os textos dentro do body por padrão serão mostrados nessa cor*/
+    font-family: var(--fonte-principal);
+    font-size: 16px; /*Tamanho da fonte*/
+    font-weight: 400; /*Tipo da fonte*/
+}
+
+/*O asteristico antes da função tem por finalidade aplicar uma ou várias funcionalidades a toda extensão do arquivo html*/
+* { /*margem e preenchimento da página*/
+    margin: 0;
+    padding: 0;
+}
+
+.principal { /*classe da primeira section*/
+    background-image: url("imagens/Background.png");
+    background-repeat: no-repeat;
+    background-size: contain; /*Preenche a imagem do background em toda section*/
+    align-items: center; /*alinhar os blocos de elementos no centro das colunas*/
+    text-align: center; /*alinhar os textos dos elementos ao centro*/
+}
+
+.conteiner {
+    /*Essa classe será usada para todas as sections posteriores, por isso a necessidade de cria-la
+    Diminui a complexidade do código ao ultiliza-la nas demais sections, evitando linhas repetidas
+    Fazendo uma analogia, é como se essa classe fosse uma variável para todas as sections*/
+    height: 100vh; /*Altura da página, 100vh = 100% de escala para todos os dispositivos*/
+    display: grid; /*Alinhar em grade (vertical)*/
+    grid-template-columns: 50% 50%; /*Alinhar as grades em colunas*/
+}
+
+.conteiner__caixa { /*estilização da primeira <div>*/
+    margin: 0 6em; /*dois valores = norte/sul, leste/oeste - quatro valores = norte, leste, sul, oeste*/
+}
+
+.conteiner__titulo { /*estilização do <h1>*/
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.conteiner__imagem {
+    margin: 1em 0 2em 0; /*espaçamento entre a imagem e os elementos externos - norte, leste, sul, oeste*/
+}
+
+.conteiner__botao { /*botoes no geral*/
+    background-color: var(--botao-azul);
+    border-radius: 5px; /*contorno da borda, quanto maior mais redondo*/
+    padding: 1em; /*"em" = tamanho relativo a fonte do texto, se a fonte for = 16px, logo o padding será de 16px com 1em*/
+    color: var(--branco-principal);
+    display: block; /*desse modo o botao vai ocupar o bloco inteiro da section/div*/
+    text-decoration: none; /*retirar o sublinhado da âncora*/
+    margin: 1em 2em; /*espaçamento para baixo (1em) e para os lados (2em) entre o botao e os elementos externos*/
+}
+
+.conteiner__botao:hover { /*muda a cor do botao ao passar o mouse*/
+    background-color: var(--botao-azul-efeito);
+}
+
+.botao__secundario { /*propriedades do segundo botao*/
+    background-color: transparent;
+    border: 2px solid var(--branco-principal); /*borda do botão*/
+}
+
+.conteiner__aviso {
+    font-size: 12px;
+    color: var(--cinza-secundario);
+}
+
+/*elementos da section dois*/
+
+.secundario {
+    align-items: center;
+    margin: 0 12em;
+}
+
+.imagem__secundaria {
+    width: 75%;
+}
+
+.descricao__titulo {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.descricao__texto {
+    font-size: 16px;
+    color: var(--cinza-secundario);
+    padding: 1em 0;
+}
+
+.conteiner__descricao {
+    padding: 0 2em 0 0;
+}
+
+.botao__terceiro {
+    display: inline-block;
+    margin: 0;
+}
+
+.conteiner__descricao__imagem {
+    padding: 0 0 0 2em;
+}
+
+.imagem__terceiro {
+    width: 90%;
+}
+
+/*quarta section*/
+
+.dispositivos {
+    text-align: center;
+}
+
+.dispositivos__titulo {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.dispositivos__lista {
+    display: flex; /*alinhar os elementos em linha*/
+    justify-content: center; /*justificar o conteúdo no centro*/
+    list-style-type: none;
+    margin: 5em 0;
+}
+
+.lista__item {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/*footer (rodapé)*/
+
+.rodape {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 8em; /*margem para baixo*/
+}
+
+.rodape__logo {
+    margin: 2em;
+}
+
+.rodape__lista {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 1em 0;
+}
+
+.lista__link {
+    margin: 0 1em;
+}
+
+.lista__link a:hover { /*a função hover (a = <a>) modifica o elemento quando nós passamos o mouse por cima do elemento na página*/
+    color: var(--botao-azul);
+}
+
+.lista__link a:active { /*a função active (a = <a>) modifica o elemento após o click do mouse*/
+    color: yellow;
+}
+
+.lista__texto {
+    text-decoration: none;
+    color: var(--branco-principal);
+}
+
+.rodape__texto {
+    font-size: 14px;
+    color: var(--cinza-secundario);
+    margin: 2em 12em;
+}
